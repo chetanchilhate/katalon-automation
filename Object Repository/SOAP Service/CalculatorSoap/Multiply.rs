@@ -67,7 +67,6 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 
 assertThat(response.getResponseText()).contains('MultiplyResponse')
 
-
-WS.verifyElementPropertyValue(response, 'MultiplyResponse.MultiplyResult', '9')</verificationScript>
+</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>

@@ -67,7 +67,6 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 
 assertThat(response.getResponseText()).contains('SubtractResult')
 
-
-WS.verifyElementPropertyValue(response, 'SubtractResponse.SubtractResult', '0')</verificationScript>
+</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>

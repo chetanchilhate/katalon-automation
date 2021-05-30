@@ -17,7 +17,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-subtractResponse = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Subtract'))
-
-WS.verifyElementPropertyValue(subtractResponse, 'SubtractResponse.SubtractResult', '0')
+response = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Subtract'))
 

@@ -17,7 +17,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-divideResponse = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Divide'))
-
-WS.verifyElementPropertyValue(divideResponse, 'DivideResponse.DivideResult', '1')
+response = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Divide'))
 

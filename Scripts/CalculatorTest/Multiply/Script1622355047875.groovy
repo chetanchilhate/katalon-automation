@@ -17,7 +17,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-multiplyResponse = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Multiply'))
-
-WS.verifyElementPropertyValue(multiplyResponse, 'MultiplyResponse.MultiplyResult', '9')
+response = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Multiply'))
 

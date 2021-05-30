@@ -67,7 +67,6 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 
 assertThat(response.getResponseText()).contains('DivideResponse')
 
-
-WS.verifyElementPropertyValue(response, 'DivideResponse.DivideResult', '1')</verificationScript>
+</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>

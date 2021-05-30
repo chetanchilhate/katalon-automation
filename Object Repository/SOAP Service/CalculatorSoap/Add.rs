@@ -67,7 +67,6 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 
 assertThat(response.getResponseText()).contains('AddResult')
 
-
-WS.verifyElementPropertyValue(response, 'AddResponse.AddResult', '6')</verificationScript>
+</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>
