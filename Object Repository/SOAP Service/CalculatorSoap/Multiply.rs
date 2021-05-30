@@ -6,7 +6,7 @@
    <elementGuidId>e43005c4-cfcf-4bc4-95ff-33d5f7a4da79</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <connectionTimeout>-1</connectionTimeout>
+   <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent></httpBodyContent>
@@ -26,7 +26,7 @@
       <value>text/xml; charset=utf-8</value>
    </httpHeaderProperties>
    <katalonVersion>7.9.1</katalonVersion>
-   <maxResponseSize>-1</maxResponseSize>
+   <maxResponseSize>0</maxResponseSize>
    <restRequestMethod></restRequestMethod>
    <restUrl></restUrl>
    <serviceType>SOAP</serviceType>
@@ -43,7 +43,7 @@
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceEndpoint>http://www.dneonline.com/calculator.asmx</soapServiceEndpoint>
    <soapServiceFunction>Multiply</soapServiceFunction>
-   <socketTimeout>-1</socketTimeout>
+   <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>false</useServiceInfoFromWsdl>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -57,6 +57,17 @@ import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
-ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()</verificationScript>
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+
+
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)
+
+
+assertThat(response.getResponseText()).contains('MultiplyResponse')
+
+
+WS.verifyElementPropertyValue(response, 'MultiplyResponse.MultiplyResult', '9')</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>
