@@ -1,0 +1,15 @@
+pipeline {
+  stages {
+    stage('Checkout') {
+      git scm
+    }
+    stage('Excute Test') {
+      bat 'katalonc -noSplash -runMode=console -retry=0 -projectPath="." -testSuitePath="Test Suites/CalculatorTest/Calculator" -executionProfile="default" -browserType="Web Service" -apiKey="cddd7c2c-3c81-4eb1-9c1c-aeead4554972" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
+    }
+  }
+  post {
+    success {
+      junit '**/*.xml'
+    }
+  }
+}  
